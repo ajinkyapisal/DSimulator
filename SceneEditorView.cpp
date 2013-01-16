@@ -1,4 +1,3 @@
-
 // SceneEditorView.cpp : implementation of the CSceneEditorView class
 //
 
@@ -210,26 +209,6 @@ void CSceneEditorView::EngineSetup(void)
     // Alter the camera aspect ratio to match the viewport
     m_Camera->setAspectRatio(Ogre::Real(rect.Width()) / Ogre::Real(rect.Height()));
 	
-/*
-	Ogre::Entity *RobotEntity = SceneManager->createEntity("Robot", "robot.mesh");
-	Ogre::SceneNode *RobotNode = SceneManager->getRootSceneNode()->createChildSceneNode();
-	RobotNode->attachObject(RobotEntity);
-
-	Ogre::AxisAlignedBox Box = RobotEntity->getBoundingBox();
-	Ogre::Vector3 Center = Box.getCenter();
-	m_Camera->lookAt(Center);
-*/
-	/*
-	Ogre::Plane plane(Ogre::Vector3::UNIT_Y, 0);
- 
-    Ogre::MeshManager::getSingleton().createPlane("ground", Ogre::ResourceGroupManager::DEFAULT_RESOURCE_GROUP_NAME,
-        plane, 3000, 3000, 20, 20, true, 1, 5, 5, Ogre::Vector3::UNIT_Z);
- 
-	Ogre::Entity* entGround = m_SceneManager->createEntity("GroundEntity", "ground");
-	m_SceneManager->getRootSceneNode()->createChildSceneNode()->attachObject(entGround);
-
-    entGround->setMaterialName("Examples/Rockwall"); 
-	*/
 	m_SceneManager->setSkyDome(true, "Examples/CloudySky", 5, 8);
 	Ogre::MaterialManager::getSingleton().setDefaultTextureFiltering(Ogre::TFO_ANISOTROPIC);
     Ogre::MaterialManager::getSingleton().setDefaultAnisotropy(7);
